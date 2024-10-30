@@ -57,6 +57,7 @@ export class UserService {
   }
 
   async login(user:CreateUserDto){
+    console.log(process.env)
     const findUser = await this.prisma.user.findUnique({
       where:{
         login:user.login
