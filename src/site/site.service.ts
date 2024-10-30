@@ -52,7 +52,7 @@ export class SiteService {
 
   async update(req, updateSiteDto: UpdateSiteDto) {
     const token = req.headers.authorization.split("Bearer ").join("")
-    console.log(token, req.headers.authorization)
+    console.log(token, req.headers)
     const login = await this.jwt.decode(token).login
     
     const site = await this.prisma.site.findUnique({
