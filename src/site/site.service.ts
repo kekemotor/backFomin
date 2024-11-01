@@ -51,6 +51,7 @@ export class SiteService {
   }
 
   async update(req, updateSiteDto: UpdateSiteDto) {
+    console.log(updateSiteDto)
     const token = req.headers.authorization.split("Bearer ").join("")
     console.log(token, req.headers)
     const login = await this.jwt.decode(token).login
@@ -67,7 +68,7 @@ export class SiteService {
         fotos:updateSiteDto.fotos,
         fio:updateSiteDto.fio,
         description:updateSiteDto.description,
-        achivenments:updateSiteDto.achievements,
+        achivenments:updateSiteDto.achivements,
         adminLogin:login
       }})
       return
@@ -77,7 +78,7 @@ export class SiteService {
         fotos:updateSiteDto.fotos,
         fio:updateSiteDto.fio,
         description:updateSiteDto.description,
-        achivenments:updateSiteDto.achievements,
+        achivenments:updateSiteDto.achivements,
         adminLogin:login
       },
       where:{
