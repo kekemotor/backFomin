@@ -71,6 +71,7 @@ export class UserService {
   }
 
   async getUserInfo(request: any) {
+    console.log(request.headers.authorization)
     const token = request.headers.authorization.split("Bearer ").join("")
     const login = await this.jwt.decode(token).login
     const site = await this.prisma.site.findUnique({
