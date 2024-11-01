@@ -4,7 +4,7 @@ import { CreateSiteDto } from './create-site.dto';
 export class UpdateSiteDto extends PartialType(CreateSiteDto) {
     fio : string
     description:string
-    achivements:string[]
+    achivenments:string[]
     fotos:string[]
     adminLogin:string
 

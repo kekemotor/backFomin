@@ -68,7 +68,7 @@ export class SiteService {
         fotos:updateSiteDto.fotos,
         fio:updateSiteDto.fio,
         description:updateSiteDto.description,
-        achivenments:updateSiteDto.achivements,
+        achivenments:updateSiteDto.achivenments,
         adminLogin:login
       }})
       return
@@ -78,7 +78,7 @@ export class SiteService {
         fotos:updateSiteDto.fotos,
         fio:updateSiteDto.fio,
         description:updateSiteDto.description,
-        achivenments:updateSiteDto.achivements,
+        achivenments:updateSiteDto.achivenments,
         adminLogin:login
       },
       where:{
