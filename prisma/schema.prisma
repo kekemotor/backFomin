@@ -22,7 +22,7 @@ model site{
   achivenments String[]
   fotos String[]
   adminLogin String @unique
-  usersCount Int @default(0)
+  userCount Int @default(0)
 }
 
 // model comments {
