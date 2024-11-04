@@ -36,13 +36,16 @@ export class SiteService {
   }
 
   async findOne(id: number) {
-    console.log("awa",
-      await this.prisma.site.findUnique({
-        where:{
-          id:id
+    await this.prisma.site.update({
+      where: {
+        id:id
+      },
+      data: {
+        userCount: {
+          increment: 1
         }
-      })
-    )
+      }
+    });
     return await this.prisma.site.findUnique({
       where:{
         id:id
