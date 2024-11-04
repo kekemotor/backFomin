@@ -46,7 +46,7 @@ export class SiteService {
         id:id
       },
       data: {
-        userCount: {
+        usersCount: {
           increment: 1
         }
       }
