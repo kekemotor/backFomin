@@ -15,7 +15,7 @@ export class SiteService {
 
 
   async liked(createSiteDto: {site:number, material:number, count:number}) {
-      const site = await this.prisma.findUnique({
+      const site = await this.prisma.site.findUnique({
         where:{
           id:createSiteDto.site
         }
@@ -23,6 +23,13 @@ export class SiteService {
 
       let newLikes = JSON.parse(site.likes)
       newLikes[createSiteDto.material] = newLikes[createSiteDto.material] + createSiteDto.count
+
+      await this.prisma.site.update({
+        data:{likes:newLikes},
+        where:{
+          id:createSiteDto.site
+        }
+      })
       console.log(site)
   }
 
