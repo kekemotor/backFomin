@@ -20,6 +20,9 @@ export class SiteService {
           id:createSiteDto.site
         }
       })
+
+      let newLikes = JSON.parse(site.likes)
+      newLikes[createSiteDto.material] = newLikes[createSiteDto.material] + createSiteDto.count
       console.log(site)
   }
 
