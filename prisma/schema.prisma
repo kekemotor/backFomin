@@ -23,6 +23,7 @@ model site{
   fotos String[]
   adminLogin String @unique
   usersCount Int @default(0)
+  likes String
 }
 
 // model comments {

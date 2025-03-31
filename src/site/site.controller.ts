@@ -12,6 +12,11 @@ export class SiteController {
     return this.siteService.create(createSiteDto);
   }
 
+  @Post("liked")
+  like(@Body() createLikeDto: {site:number, material:number, count:number}) {
+    return this.siteService.liked(createLikeDto);
+  }
+
   @Get("getToEdit")
   getToEdit(@Req() req:Request) {
     return this.siteService.getToEdit(req);

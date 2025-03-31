@@ -11,8 +11,16 @@ export class SiteService {
     private readonly prisma : PrismaService
   )
   {}
-  create(createSiteDto: CreateSiteDto) {
-    return 'This action adds a new site';
+
+
+
+  async liked(createSiteDto: {site:number, material:number, count:number}) {
+      const site = await this.prisma.findUnique({
+        where:{
+          id:createSiteDto.site
+        }
+      })
+      console.log(site)
   }
 
   async getToEdit(req:any) {
