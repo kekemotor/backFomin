@@ -47,7 +47,7 @@ export class SiteService {
         fotos:[],
         fio:'',
         description:'',
-        achievements:[]
+        achivenments:[]
       }
     }
     return site
