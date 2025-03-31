@@ -25,7 +25,7 @@ export class SiteService {
       newLikes[createSiteDto.material] = newLikes[createSiteDto.material] + createSiteDto.count
 
       await this.prisma.site.update({
-        data:{likes:newLikes},
+        data:{likes:JSON.stringify(newLikes)},
         where:{
           id:createSiteDto.site
         }
