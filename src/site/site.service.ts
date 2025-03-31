@@ -86,7 +86,7 @@ export class SiteService {
         description:updateSiteDto.description,
         achivenments:updateSiteDto.achivenments,
         adminLogin:login,
-        likes:JSON.stringify(Array(10).fill(0))
+        likes:JSON.stringify(Array(updateSiteDto.achivenments.length).fill(0))
       }})
       return
     }
