@@ -85,7 +85,8 @@ export class SiteService {
         fio:updateSiteDto.fio,
         description:updateSiteDto.description,
         achivenments:updateSiteDto.achivenments,
-        adminLogin:login
+        adminLogin:login,
+        likes:JSON.stringify(Array(10).fill(0))
       }})
       return
     }
